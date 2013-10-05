@@ -21,9 +21,77 @@
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
   <style type="text/css"></style><script type="text/javascript" src="http://ads.admasis.com/adsloader.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+    <script>
+        $(function () {
+            var availableTags = [
+              "ActionScript",
+              "AppleScript",
+              "Asp",
+              "BASIC",
+              "C",
+              "C++",
+              "Clojure",
+              "COBOL",
+              "ColdFusion",
+              "Erlang",
+              "Fortran",
+              "Groovy",
+              "Haskell",
+              "Java",
+              "JavaScript",
+              "Lisp",
+              "Perl",
+              "PHP",
+              "Python",
+              "Ruby",
+              "Scala",
+              "Scheme"
+            ];
+            $("#mainSearch").autocomplete({
+                source: availableTags
+            });
+        });
+  </script>
+
   </head>
 
   <body style="">
+
+      <div id="fb-root"></div>
+    <script>
+        // Additional JS functions here
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '649640785069496', // App ID
+                channelUrl: 'http://cseerg.org.uk/channel.html', // Channel File
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true  // parse XFBML
+            });
+            $("#logoutBtn").click(function () {
+
+                FB.logout(function (response) {
+                    // user is now logged out
+                    window.location = "http://cseerg.org.uk/Hashbook/index2.html";
+                });
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -37,7 +105,7 @@
         </div>
         <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
-            <li><a href="about.html"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+            <li><a href="#" id="logoutBtn"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -64,11 +132,11 @@
       
       	<div class="col-xs-6 col-sm-6 col-md-6" style="padding-top:30px;padding-bottom:100px;">
       		<form action="save_tag.php" method="post">
-        <div class="input-group">
-         
-      		  <input name="tag" type="text" class="form-control" />
+        <div class="input-group input-group-lg">
+                     <span class="input-group-addon">#</span>
+      		  <input name="tag" type="text" class="form-control input-lg" id="mainSearch"/>
         		<span class="input-group-btn">
-         	 		<button class="btn btn-default" type="submit" name="submit">Track!</button>
+         	 		<button class="btn btn-info" type="submit" name="submit">Track!</button>
         		</span>
 		</div><!-- /input-group -->
          	</form>
