@@ -34,7 +34,7 @@
           </button>
           <a class="navbar-brand"  href="http://cseerg.org.uk/Hashbook/">#Hashbook</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
             <li><a href="about.html"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
           </ul>
@@ -43,17 +43,52 @@
     </div>
 
     <div class="container">
-
-      <div class="starter-template">
-        <h1>#Hashbook feed</h1>
-        <p class="lead">Only feed that matters.</p>
-        <p class="lead"><fb:login-button show-faces="true" width="150" max-rows="2" size="xlarge"></fb:login-button></p>
-      </div>
       
+      <div>
+		<div class="col-xs-3 col-sm-3 col-md-3 sidebar-offcanvas pull-left" id="sidebar" role="navigation" style="padding-top:30px;">
+          <div class="well sidebar-nav navbar-static-top">
+            <ul class="nav">
+              <li>Friends Trending Topics</li>
+              <li class="active"><a href="#">#Hackathon</a></li>
+              <li><a href="#">#SantoJesus</a></li>
+              <li><a href="#">#Hashbook</a></li>
+              <li>Global Trending Topics</li>
+              <li><a href="#">#Facebook</a></li>
+              <li><a href="#">#FreeFood</a></li>
+              <li><a href="#">#WorldPeace</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
       
+      	<div class="col-xs-6 col-sm-6 col-md-6" style="padding-top:30px;padding-bottom:100px;">
+      		<div class="input-group">
+      		<input type="text" class="form-control">
+      		<span class="input-group-btn">
+       	 		<button class="btn btn-default" type="button">Track!</button>
+      		</span>
+    		</div><!-- /input-group -->
+    		<br/>
+      		<div id="postStream" class="well" style="padding-top:30px;">
+        		
+        		<!-- Loading posts continously here -->
+        		
+      		</div>
+      	</div>
       
-      
-
+      	<div class="ccol-xs-3 col-sm-3 col-md-3 sidebar-offcanvas pull-right" id="sidebar" role="navigation" style="padding-top:30px;">
+          <div class="well sidebar-nav navbar-static-top">
+            <ul class="nav">
+              <li>Suggestions</li>
+              <li class="active"><a href="#">#Tennis</a></li>
+              <li><a href="#">#Football</a></li>
+              <li><a href="#">#Java</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div>
+            
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
