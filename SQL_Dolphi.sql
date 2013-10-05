@@ -3,13 +3,13 @@ USE Dolphi;
 
 CREATE TABLE Users
 (
-u_id INT,
+u_id INT NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (u_id)
 );
 
 CREATE TABLE Tags
 (
-t_id INT,
+t_id INT NOT NULL AUTO_INCREMENT,
 tag VARCHAR(140) NOT NULL,
 PRIMARY KEY (t_id)
 );

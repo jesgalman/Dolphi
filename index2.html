@@ -48,7 +48,7 @@
       <div class="starter-template">
         <h1>#Hashbook feed</h1>
         <p class="lead">Only feed that matters.</p>
-        <p class="lead"><fb:login-button show-faces="true" width="150" max-rows="2" size="xlarge"></fb:login-button></p>
+        <p class="lead"><fb:login-button show-faces="true" id="loginBtn" width="150" max-rows="2" size="xlarge"></fb:login-button></p>
       </div>
       
       
@@ -81,6 +81,8 @@
             // login status of the person. In this case, we're handling the situation where they 
             // have logged in to the app.
             testAPI();
+            window.location = "http://cseerg.org.uk/Hashbook/Home.html"; 
+            
           } else if (response.status === 'not_authorized') {
             // In this case, the person is logged into Facebook, but not into the app, so we call
             // FB.login() to prompt them to do so. 
@@ -112,20 +114,21 @@
 
       // Here we run a very simple test of the Graph API after login is successful. 
       // This testAPI() function is only called in those cases. 
-      function testAPI() {
+       function testAPI() {
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
           console.log('Good to see you, ' + response.id + '.');
         });
+            
       }
 
-      function logout(){
+      /*function logout(){
       FB.logout(function(response) {
         // user is now logged out
       });
       //<span id="fbLogout" onclick="logout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span>
 
-    }
+      }*/
     </script>
     <!--
   Below we include the Login Button social plugin. This button uses the JavaScript SDK to
@@ -141,6 +144,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./Starter Template for Bootstrap_files/jquery.js"></script>
     <script src="./Starter Template for Bootstrap_files/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   
 
 </body></html>
