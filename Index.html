@@ -65,9 +65,17 @@
 		  function testAPI() {
 		    console.log('Welcome!  Fetching your information.... ');
 		    FB.api('/me', function(response) {
-		      console.log('Good to see you, ' + response.name + '.');
+		      console.log('Good to see you, ' + response.id + '.');
 		    });
 		  }
+
+		  function logout(){
+		  FB.logout(function(response) {
+  			// user is now logged out
+		  });
+		  //<span id="fbLogout" onclick="logout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span>
+
+		}
 		</script>
 		<!--
   Below we include the Login Button social plugin. This button uses the JavaScript SDK to
@@ -77,7 +85,6 @@
   /docs/reference/plugins/login/ -->
 
 <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-		
       <footer>
         <p>&copy; Facebook Hackathon 2013</p>
       </footer>
