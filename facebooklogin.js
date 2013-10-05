@@ -1,18 +1,3 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasher</title>
-    <script src="jquery-1.10.2.min.js"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
-
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<div id="fb-root"></div>
-		<script>
-		  // Additional JS functions here
 		  window.fbAsyncInit = function() {
 		    FB.init({
 		      appId      : '649640785069496', // App ID
@@ -75,23 +60,4 @@
 		  FB.logout(function(response) {
   			// user is now logged out
 		  });
-		  //<span id="fbLogout" onclick="logout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span>
-
 		}
-		</script>
-		<!--
-  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
-  present a graphical Login button that triggers the FB.login() function when clicked.
-
-  Learn more about options for the login button plugin:
-  /docs/reference/plugins/login/ -->
-
-<fb:login-button show-faces="true" width="100" max-rows="2"></fb:login-button>
-      <footer>
-        <p>&copy; Facebook Hackathon 2013</p>
-      </footer>
-</body>
-
-
-
-</html>
