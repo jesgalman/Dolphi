@@ -1,28 +1,18 @@
-
 <?php 
 $tag = $_POST["tag"];
 
-
-$con=mysqli_connect("localhost","root","root","hack");
+$con=mysqli_connect("localhost","root","","Dolphi");
 	
-
 // Check connection
 if (mysqli_connect_errno())
   {
-
-
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-mysqli_query($con,"INSERT INTO tags(tag) VALUES('$tag')");
-
-
+mysqli_query($con,"INSERT INTO Tags(tag) VALUES('$tag')");
 
 mysqli_close($con);
- $gohere = "http://localhost:8888/Dolphi/Home.html";
+$gohere = "http://localhost/Dolphi/Home.html";
 
-$doc = new DOMDocument();
-$doc->loadHTMLFile($gohere);
-echo $doc->saveHTML();
-
+header("Location: $gohere");
 
 ?>
